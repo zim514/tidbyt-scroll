@@ -16,5 +16,7 @@ RUN mkdir -p /tidbyt
 RUN useradd -m tidbyt && chown -R tidbyt:tidbyt /tidbyt
 #Change to tidbyt user
 USER tidbyt
+WORKDIR /tidbyt
+COPY hello_world.star .
 #TODO: Add step for .star file
-CMD pixlet push $API $ID scroll.webp
+CMD pixlet serve hello_world.star
